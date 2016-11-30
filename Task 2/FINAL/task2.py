@@ -1,39 +1,39 @@
 __authors__ = ['Thomas Bass']
 ##    Candidate Number 4869  |  Centre Number 52423
 ##   TASK 2  ##
-import sqlite3 as lite
+import sqlite3 as lite                                                          ## Imports libraries
 import random
 import math
-currentOrder = []
-con = lite.connect('dbuse.db')            ## connects to Database
-cur = con.cursor()
-def verify(con, cur, currentOrder):
-  var = input('Enter GTIN for the product you wish to purchase:\n> ')
-  if len(var) == 8 and var.isnumeric() == True:
-    findStock(con, cur, currentOrder, var)
-  else:
-    print('Enter a 8 digit number')
-    verify(con, cur, currentOrder)
+currentOrder = []                                                               ## Define currentOrder as an array
+con = lite.connect('dbuse.db')                                                  ## connects to Database
+cur = con.cursor()                                                              ## SQLite
+def verify(con, cur, currentOrder):                                             ## Define verify
+  var = input('Enter GTIN for the product you wish to purchase:\n> ')           ## input 'var'
+  if len(var) == 8 and var.isnumeric() == True:                                 ## If 'var' = 8 and is numerical
+    findStock(con, cur, currentOrder, var)                                      ## Call findStock
+else:                                                                           ## Else
+    print('Enter a 8 digit number')                                             ## Print error
+    verify(con, cur, currentOrder)                                              ## call verify
 
-def findStock(con, cur, currentOrder, var):
-  cur.execute('SELECT * FROM Inventory WHERE GTIN = ?', (var,))                ## excutes
-  results = cur.fetchall()            ## collects results from SQL
-  con.commit()
-  if results == []:
-    print('No product found. Please try again')
-    verify(con, cur, currentOrder)
-  print('Product Found!')
-  for product in results:
-    if product[2] == '':
+def findStock(con, cur, currentOrder, var):                                     ## Define findStock
+  cur.execute('SELECT * FROM Inventory WHERE GTIN = ?', (var,))                 ## excutes
+  results = cur.fetchall()                                                      ## collects results from SQL
+  con.commit()                                                                  ## Commit .db-journal
+  if results == []:                                                             ## If resutls array is empty
+    print('No product found. Please try again')                                 ## Print no results found
+    verify(con, cur, currentOrder)                                              ## Call verify
+  print('Product Found!')                                                       ## Print product Found
+  for product in results:                                                       ## Loop for products in resutls
+    if product[2] == '':                                                        ## If Product [2] is empty
       sizeName = ''
     elif product[2] == 'Small' or product[2] == 'Medium' or product[2] == 'Large':
-      sizeName = product[2]
+      sizeName = product[2]                                                     ## If Product [2] is small/medimm/large sizeName = product[2]
     else:
-      sizeNameRaw = product[2], 'ml'
-      sizeName = "".join(sizeNameRaw)
+      sizeNameRaw = product[2], 'ml'                                            ## sizeNameRaw = product[2]
+      sizeName = "".join(sizeNameRaw)                                           ## sizeName = sizeNameRaw join''
     print('  Name: ', sizeName, product[1], '\n  Price: ', product[3], '\n  Stock Available: ', product[4])
-    enterOrder(sizeName, product, var, results, currentOrder, cur, con) 
-  
+    enterOrder(sizeName, product, var, results, currentOrder, cur, con)
+
 def enterOrder(sizeName, product, var, results, currentOrder, cur, con):
   QtyToOrder = input('----------\nEnter Quantity to order:\n>')
   if QtyToOrder.isnumeric() == False:
@@ -41,7 +41,7 @@ def enterOrder(sizeName, product, var, results, currentOrder, cur, con):
     enterOrder(sizeName, product, var, results, currentOrder, cur, con)
   elif int(QtyToOrder) > int(product[4]):
     print('Error: Not enough stock. Please order', product[4], 'or less')
-    enterOrder(sizeName, product, var, results, currentOrder, con, cur)   
+    enterOrder(sizeName, product, var, results, currentOrder, con, cur)
   elif int(QtyToOrder) < 1:
     print('You can\'t order less than 1. Try again')
     enterOrder(sizeName, product, var, results, currentOrder, con, cur)
@@ -50,8 +50,8 @@ def enterOrder(sizeName, product, var, results, currentOrder, cur, con):
     NewStockAvab = 0
     costOfOrder = float(product[3])*int(QtyToOrder)
     currentOrderAddRaw = str(QtyToOrder), ' x ', str(sizeName), ' ', str(product[1]), ' (GTIN: ', str(product[0]), ') @ £',
-    //str(product[3]), ' = £', str(costOfOrder)     
-    currentOrderAdd = "".join(currentOrderAddRaw) 
+    //str(product[3]), ' = £', str(costOfOrder)
+    currentOrderAdd = "".join(currentOrderAddRaw)
     print('Added to order!')
     print('Updating Stock Levels...')
     QtyInt = int(QtyToOrder)
@@ -66,7 +66,7 @@ def enterOrder(sizeName, product, var, results, currentOrder, cur, con):
       currentOrder.append(currentOrderAdd+' [CANCELLED]')
       print('\n\nPLEASE ENTER \'100\' TO ESCAPE ERROR\n\n')
       enterOrder(sizeName, product, var, results, currentOrder, cur, con)
-    currentOrder.append(currentOrderAdd)      
+    currentOrder.append(currentOrderAdd)
     again = input('Order another item? [Y/N]:\n>')
     if again == 'Y' or again == 'y':
       verify(con, cur, currentOrder)
@@ -85,4 +85,3 @@ def ask(cur, con, currentOrder):
     ask(cur, con, currentOrder)
 
 ask(cur, con, currentOrder)     ## Calls first func
-
