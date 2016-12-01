@@ -25,22 +25,23 @@ def findStock(con, cur, currentOrder, var):                                     
   print('Product Found!')                                                       ## Print product Found
   for product in results:                                                       ## Loop for products in resutls
     if product[2] == '':                                                        ## If Product [2] is empty
-      sizeName = ''
+      sizeName = ''                                                             ## Product [2] is empty
     elif product[2] == 'Small' or product[2] == 'Medium' or product[2] == 'Large':
       sizeName = product[2]                                                     ## If Product [2] is small/medimm/large sizeName = product[2]
     else:
       sizeNameRaw = product[2], 'ml'                                            ## sizeNameRaw = product[2]
       sizeName = "".join(sizeNameRaw)                                           ## sizeName = sizeNameRaw join''
-    print('  Name: ', sizeName, product[1], '\n  Price: ', product[3], '\n  Stock Available: ', product[4])
-    enterOrder(sizeName, product, var, results, currentOrder, cur, con)
+    print('  Name: ', sizeName, product[1], '\n  Price: ', product[3],'
+    '\n  Stock Available: ', product[4])
+    enterOrder(sizeName, product, var, results, currentOrder, cur, con)         ## Call enterOrder
 
-def enterOrder(sizeName, product, var, results, currentOrder, cur, con):
-  QtyToOrder = input('----------\nEnter Quantity to order:\n>')
-  if QtyToOrder.isnumeric() == False:
-    print('Enter a valid Number')
-    enterOrder(sizeName, product, var, results, currentOrder, cur, con)
-  elif int(QtyToOrder) > int(product[4]):
-    print('Error: Not enough stock. Please order', product[4], 'or less')
+def enterOrder(sizeName, product, var, results, currentOrder, cur, con):        ## Define enterOrder
+  QtyToOrder = input('----------\nEnter Quantity to order:\n>')                 ## Input QtyToOrder
+  if QtyToOrder.isnumeric() == False:                                           ## If QtyToOrder is not numerical
+    print('Enter a valid Number')                                               ## Error
+    enterOrder(sizeName, product, var, results, currentOrder, cur, con)         ## Call enterOrder
+elif int(QtyToOrder) > int(product[4]):                                         ## Elif QtyToOrder > product[4]
+    print('Error: Not enough stock. Please order', product[4], 'or less')       ## Print 
     enterOrder(sizeName, product, var, results, currentOrder, con, cur)
   elif int(QtyToOrder) < 1:
     print('You can\'t order less than 1. Try again')
