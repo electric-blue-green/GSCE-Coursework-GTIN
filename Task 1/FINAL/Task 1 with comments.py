@@ -2,8 +2,7 @@ import math                                                                     
 import sys
 print('GCSE Controlled Assesment A453\nThomas Bass 4869\nTask 1')
 def start():                                                                    ## Defines 'start'
-  ask = input('Press [c] to calculate the 8th digit from 7\n
-  'Press [v] to vertify an 8 digit GTIN Number \n')                             ## Ask the user if they want to verify or calculate
+  ask = input('Press [c] to calculate the 8th digit from 7\nPress [v] to vertify an 8 digit GTIN Number \n')                             ## Ask the user if they want to verify or calculate
   if ask == 'c' or ask == 'C':                                                  ## If user chooses to calculate
     length = 7                                                                  ## 'length' is 7
   elif ask == 'v' or ask == 'V':                                                ## If user chooses to verify
