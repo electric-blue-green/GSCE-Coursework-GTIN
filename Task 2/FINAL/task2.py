@@ -1,6 +1,6 @@
 __authors__ = ['Thomas Bass']
-##    Candidate Number 4869  |  Centre Number 52423
-##   TASK 2  ##
+##   Candidate Number 4869  |  Centre Number 52423
+##   TASK 2
 import sqlite3 as lite                                                          ## Imports libraries
 import random
 import math
@@ -41,48 +41,48 @@ def enterOrder(sizeName, product, var, results, currentOrder, cur, con):        
     print('Enter a valid Number')                                               ## Error
     enterOrder(sizeName, product, var, results, currentOrder, cur, con)         ## Call enterOrder
 elif int(QtyToOrder) > int(product[4]):                                         ## Elif QtyToOrder > product[4]
-    print('Error: Not enough stock. Please order', product[4], 'or less')       ## Print 
-    enterOrder(sizeName, product, var, results, currentOrder, con, cur)
-  elif int(QtyToOrder) < 1:
-    print('You can\'t order less than 1. Try again')
-    enterOrder(sizeName, product, var, results, currentOrder, con, cur)
-  else:
-    print('Adding to order...')
-    NewStockAvab = 0
-    costOfOrder = float(product[3])*int(QtyToOrder)
-    currentOrderAddRaw = str(QtyToOrder), ' x ', str(sizeName), ' ', str(product[1]), ' (GTIN: ', str(product[0]), ') @ £',
-    //str(product[3]), ' = £', str(costOfOrder)
-    currentOrderAdd = "".join(currentOrderAddRaw)
-    print('Added to order!')
-    print('Updating Stock Levels...')
-    QtyInt = int(QtyToOrder)
-    NewStockAvab = str((int(product[4])) - QtyInt)
-    sql = ("UPDATE INVENTORY SET STOCKAVAB = '"+NewStockAvab+"' WHERE GTIN LIKE '"+product[0]+"'")
-    try:
-      cur.execute(sql)
-      con.commit()
-      print('Updated')
-    except:
-      print('Error: Inventory Update failed to commit.')
-      currentOrder.append(currentOrderAdd+' [CANCELLED]')
-      print('\n\nPLEASE ENTER \'100\' TO ESCAPE ERROR\n\n')
-      enterOrder(sizeName, product, var, results, currentOrder, cur, con)
-    currentOrder.append(currentOrderAdd)
-    again = input('Order another item? [Y/N]:\n>')
-    if again == 'Y' or again == 'y':
-      verify(con, cur, currentOrder)
-    if again == 'N' or again == 'n':
-      print('Order finished!')
-      print('Receipt:')
-      for order in currentOrder:
-        print(order)
+    print('Error: Not enough stock. Please order', product[4], 'or less')       ## Print
+    enterOrder(sizeName, product, var, results, currentOrder, con, cur)         ## Call enterOrder
+elif int(QtyToOrder) < 1:                                                       ## Elif QtyToOrder < 1
+    print('You can\'t order less than 1. Try again')                            ## Print error
+    enterOrder(sizeName, product, var, results, currentOrder, con, cur)         ## Call enterOrder
+else:                                                                           ## else
+    print('Adding to order...')                                                 ## Print addint to order
+    NewStockAvab = 0                                                            ## Set NewStockAvab = 0
+    costOfOrder = float(product[3])*int(QtyToOrder)                             ## costOfOrder = product[3]*QtyToOrder
+    currentOrderAddRaw = str(QtyToOrder), ' x ', str(sizeName), ' ', str(product[1]), ' (GTIN: ', str(product[0]), ') @ £',                 ## currentOrderAddRaw
+    str(product[3]), ' = £', str(costOfOrder)
+    currentOrderAdd = "".join(currentOrderAddRaw)                               ## currentOrderAdd = costOfOrder join ''
+    print('Added to order!')                                                    ## Print adding to order
+    print('Updating Stock Levels...')                                           ## Print updating stock levels
+    QtyInt = int(QtyToOrder)                                                    ## QtyInt = QtyToOrder
+    NewStockAvab = str((int(product[4])) - QtyInt)                              ## NewStockAvab = product[4] - QtyInt
+    sql = ("UPDATE INVENTORY SET STOCKAVAB = '"+NewStockAvab+"' WHERE GTIN LIKE '"+product[0]+"'")                      ## SQL query
+    try:                                                                        ## try
+      cur.execute(sql)                                                          ## Execute SQL
+      con.commit()                                                              ## Commit .db-journal
+      print('Updated')                                                          ## Print 'updated'
+    except:                                                                     ## SQL Rejection
+      print('Error: Inventory Update failed to commit.')                        ## Print Error
+      currentOrder.append(currentOrderAdd+' [CANCELLED]')                       ## append order cancellation
+      print('\n\nPLEASE ENTER \'100\' TO ESCAPE ERROR\n\n')                     ## Print error escape message
+      enterOrder(sizeName, product, var, results, currentOrder, cur, con)       ## Call enterOrder
+    currentOrder.append(currentOrderAdd)                                        ## Call currentOrder
+    again = input('Order another item? [Y/N]:\n>')                              ## Input 'again'
+    if again == 'Y' or again == 'y':                                            ## If again = 'Y'
+      verify(con, cur, currentOrder)                                            ## Call verify
+    if again == 'N' or again == 'n':                                            ## If ayain = 'n'
+      print('Order finished!')                                                  ## Print order complete
+      print('Receipt:')                                                         ## Print receipt
+      for order in currentOrder:                                                ## For orders in currentOrder
+        print(order)                                                            ## Print 'order'
 
-def ask(cur, con, currentOrder):
-  askQuery = input('Press [s] to search for a product\'s GTIN number:\n> ')
-  if askQuery == 's' or askQuery == 'S':
-    verify(con, cur, currentOrder)
-  else:
-    print('Invalid Choice')
-    ask(cur, con, currentOrder)
+def ask(cur, con, currentOrder):                                                ## Defien ask
+  askQuery = input('Press [s] to search for a product\'s GTIN number:\n> ')     ## askQuery = input 'S'
+  if askQuery == 's' or askQuery == 'S':                                        ## If askQuery
+    verify(con, cur, currentOrder)                                              ## Call verify
+  else:                                                                         ## else
+    print('Invalid Choice')                                                     ## Print invalid choice
+    ask(cur, con, currentOrder)                                                 ## Call ask
 
-ask(cur, con, currentOrder)     ## Calls first func
+ask(cur, con, currentOrder)                                                     ## Call ask
