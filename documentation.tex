@@ -106,7 +106,7 @@
 \item[~]{Expected result: not enough stock, re-input.}
 \end{enumerate}
 
-\subsection{Task 2}
+\subsection{Task 3}
 \begin{enumerate}
 \item{Edit database for reduced stock. If reduced stock is identified, it passes.}
 \item[~]{Test data: Edit a stock level to -10 of stock level.}
@@ -120,6 +120,7 @@
 \item{If the program handles SQL errors, it passes.}
 \item[~]{Attempt to update from more than stock level.}
 \end{enumerate}
+
 
 \pagebreak
 
@@ -162,6 +163,7 @@ Verify Function:
   ENDIF
 END
 \end{lstlisting}
+\pagebreak
 
 \subsection{Task 2}
 \begin{lstlisting}
@@ -191,12 +193,37 @@ ELSE
 ENDIF
 END
 \end{lstlisting}
+\
 
-
-
+\subsection{Task 3}
+\begin{lstlisting}
+START
+Connect to SQL Database
+Search database:
+  IF stock level < target stock level:
+  RETURN results
+PRINT results
+APPEND results to ‘order’ list
+IF order complete:
+  UPDATE database:
+  stock level = target stock level
+ELSE
+  END
+ENDIF
+END
+\end{lstlisting}
 
 \pagebreak
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Data Structure}
+\subsection{Task 1}
+\begin{center}
+\begin{tabular}{ | m{13em} | m{16em} | }
+\hline
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Testing
 \marginpar{test}
 
