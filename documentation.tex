@@ -1,0 +1,231 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+\geometry{a4paper, portrait, margin=1in}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{tabu}
+\usepackage{listings}
+
+\title{Computing GCSE Coursework}
+\author{\\ \\ \\ \\ Thomas Bass\\Candidate 4869\\Centre 52423\\OCR A453 Programming Project\\\\Made with \LaTeX}
+\date{2016-2017}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Computing GCSE Coursework}
+\chead{Candidate 4869}
+\lhead{Thomas Bass}
+\rfoot{Page \thepage}
+
+\begin{document}
+
+\maketitle
+\pagebreak
+\renewcommand*\contentsname{Summary}
+\tableofcontents
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objectives}
+
+\subsection{Task 1}
+\begin{enumerate}
+\item{Take an input and verify that it is 8 or 7 numerical digits}
+\item{Calculate the 8th check digit:}
+\item[~a]{Multiply the first 7 numbers alternately by 3,1}
+\item[~b]{Total these results}
+\item[~c]{Subtract this sum from its nearest highest multiple of 10}
+\item{Compare this to the given 8th number, or complete the 7-digit number}
+\end{enumerate}
+
+\subsection{Task 2}
+\begin{enumerate}
+\item{Take an input and validate that it is 8 numerical digits}
+\item{Connect to a SQL database and run a query}
+\item{Collect and display the results}
+\item{Update the database with the customer?s order}
+\item{Print a receipt}
+\item{Cope with SQL errors}
+\end{enumerate}
+
+\subsection{Task 3}
+\begin{enumerate}
+\item{Scan a database and find stock to order}
+\item{Create a receipt of the order}
+\item{Update the database with the updated stock level}
+\item{Cope with any SQL errors}
+\end{enumerate}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Test Plan}
+
+\subsection{Task 1}
+\begin{enumerate}
+\item{Input strings of incorrect length. If rejected, it passes.}
+\item[~]{Test data: \verb|12345|}
+\item[~]{Test data: \verb|1234567890|}
+\item{Input strings of letters. If rejected, it passes.}
+\item[~]{Test data: \verb|abcdefg|}
+\item{Get program to run a valid input. Print out totals at each stage, and check them manually. If they are the same, it passes.}
+\item[~]{Test data: \verb|13245627|}
+\item[~i.]{Manually add the totals of a valid input. If they are the same, it passes.}
+\item[~ii.]{Manually round the total to the highest 10. If it is the same, it passes.}
+\item[~iii.]{Manually collect the distance rounded. If it is the same, it passes.}
+\item{Run the program with a GTIN number taken from a product. If it correctly calculated and verified, it passes.}
+\end{enumerate}
+
+\subsection{Task 2}
+\begin{enumerate}
+\item{Input strings of incorrect length. If rejected, it passes.}
+\item[~]{Test data: \verb|12345|.}
+\item[~]{Test data: \verb|1234567890|.}
+\item{Input strings of letters. If rejected, it passes.}
+\item[~]{Test data: \verb|abcdefg|.}
+\item{Input a valid string to search. If product found, it passes.}
+\item[~]{Test data: \verb|11440529|.}
+\item{Manually check that the program has displayed the correct stock level and information. If it does, it passes.}
+\item[~]{Stock info: 50 in stock for \#\verb|11440529| (red paint 100ml).}
+\item{Order a quantity of the product. If the program updates the stock levels, it passes.}
+\item[~]{Test data: order 5 x QTY of \#\verb|11440529| (red paint 100ml).}
+\item{Complete a full order. If the program displays a receipt with the correct values, it passes.}
+\item[~]{Test data: order 5 x QTY of \#\verb|11440529| (red paint 100ml) AND}
+\item[~]{6 x QTY of \#\verb|11509493| (blue paint 100ml).}
+\item[~]{Expected result: 5 x \#\verb|11509493| = \pounds9.95 AND 6x \#\verb|11509493| = \pounds11.94, total:  \pounds21.90 .}
+\item{Provide the program with invalid values (such as ordering negative values). If the program rejects these, it passes.}
+\item[~]{Test data: -3 x QTY \#\verb|11509493|.}
+\item[~]{Expected result: error and re-input.}
+\item[~]{Test data 0 x QTY \#\verb|11509493|.}
+\item[~]{Expected result: error and re-input.}
+\item[~]{Test data: 100 x QTY \#\verb|11509493|.}
+\item[~]{Expected result: not enough stock, re-input.}
+\end{enumerate}
+
+\subsection{Task 2}
+\begin{enumerate}
+\item{Edit database for reduced stock. If reduced stock is identified, it passes.}
+\item[~]{Test data: Edit a stock level to -10 of stock level.}
+\item[~]{Print receipt.}
+\item{Edit database for reduced stock. If a human-readable receipt is produced, it passes.}
+\item[~]{Test data: Edit two stock levels to -10 of stock level.}
+\item[~]{Print receipt.}
+\item{Complete order for reduced stock. If the database updated, it passes.}
+\item[~]{Continue from test area 2, and update database.}
+\item[~]{Check database manually.}
+\item{If the program handles SQL errors, it passes.}
+\item[~]{Attempt to update from more than stock level.}
+\end{enumerate}
+
+\pagebreak
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Pseudocode}
+\subsection{Task 1}
+\begin{lstlisting}
+START
+User INPUT choice for calculate or verify	
+IF Calculate:
+Number Length is 7
+  INPUT GTIN
+  CALL Verify function
+ELSE IF Verify:
+  Number Length is 8
+  INPUT GTIN
+  CALL verify Function
+ENDIF
+ENDIF
+Verify Function:
+  IF GTIN length = Length AND is all numeric:
+    For a loop of 7 by step of 2:
+      total = total+(GTIN [counter]*3)
+      IF counter =6:
+        Round total UP to nearest multiple of 10
+        result = roundedNumber - total
+          If Length = 7:
+            Print result
+          ELSE
+            If GTIN at position Length = result:
+              Print GTIN is a valid number
+            ELSE:
+              Print GTIN is an invalid number
+            ENDIF
+      ELSE
+        Multiply GTIN at position of counter+1 by 1 and add to total
+      ENDIF
+  ELSE
+    Print error and return to GTIN input
+  ENDIF
+END
+\end{lstlisting}
+
+\subsection{Task 2}
+\begin{lstlisting}
+START
+User INPUT GTIN number
+IF GTIN is numerical AND GTIN = 8 charachters:
+  Search Database for GTIN number
+  IF result found:
+    User INPUT quantity to order
+    IF quantity > 0 AND quantity <= stock available
+      PRINT receipt with total cost (cost per item * quantity ordered)
+      Update Database with new stock (stock available – quantity ordered)
+      User INPUT choice to order more items
+      IF choice = yes:
+        Add to order list and return to GTIN INPUT
+      ELSE
+        PRINT final receipt (order list) and end program
+      ENDIF
+    ELSE
+      Return to Quantity INPUT
+    ENDIF
+  ELSE
+    Return to GTIN INPUT
+  ENDIF
+ELSE
+  Return to GTIN INPUT	
+ENDIF
+END
+\end{lstlisting}
+
+
+
+
+\pagebreak
+
+Testing
+\marginpar{test}
+
+\begin{center}
+\begin{tabular}{ | m{13em} | m{16em}| m{14em} | } 
+ \hline
+ Variable Name & Variable Description & Value \\ [0.5ex] 
+ \hline\hline
+ \verb|con| and \verb|cur| & Connections to SQL database & N/A \\ 
+ \hline
+ \verb|var| & User Input GTIN number & User Defined \\
+ \hline
+ \verb|results| & Fetchall results from SQL query & N/A (list) \\
+ \hline
+ \verb|product| & Equal to \verb|results|, reformatted & Equal to \verb|results| \\
+ \hline
+ \verb|sizeName| and \verb|sizeNameRaw| & Variables used to format the name of the product & Name of product selected \\
+ \hline
+ \verb|QtyToOrder| & User Input quantity ordered & User Defined \\
+ \hline
+ \verb|NewStockAvab| & Variable used to update the SQL database with the new stock levels & Stock Available minus \verb|QtyToOrder| \\ 
+ \hline
+ \verb|costOfOrder| & Total cost of order & Price of product*\verb|QtyToOrder| \\
+ \hline
+ \verb|currentOrderAddRaw| and \verb|currentOrderAdd| and \verb|currentOrder| & Variables used to format and append the order to the entire list of order (to print receipt) & N/A \\ [1ex] 
+ \hline
+\end{tabular}
+\end{center}
+
+
+
+\end{document}
