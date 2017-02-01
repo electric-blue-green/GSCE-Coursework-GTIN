@@ -175,7 +175,7 @@ IF GTIN is numerical AND GTIN = 8 charachters:
     User INPUT quantity to order
     IF quantity > 0 AND quantity <= stock available
       PRINT receipt with total cost (cost per item * quantity ordered)
-      Update Database with new stock (stock available – quantity ordered)
+      Update Database with new stock (stock available a quantity ordered)
       User INPUT choice to order more items
       IF choice = yes:
         Add to order list and return to GTIN INPUT
@@ -203,7 +203,7 @@ Search database:
   IF stock level < target stock level:
   RETURN results
 PRINT results
-APPEND results to ‘order’ list
+APPEND results to order list
 IF order complete:
   UPDATE database:
   stock level = target stock level
@@ -221,12 +221,29 @@ END
 \subsection{Task 1}
 \begin{center}
 \begin{tabular}{ | m{13em} | m{16em} | }
-\hline
+  \hline
+  Variable Name & Variable Description	\\ [0.5ex] 
+  \hline\hline
+  \verb|ask| & The choice wether the user wants to verify or calculate \\
+  \hline
+  \verb|gtin| & The GTIN number used \\
+  \hline
+  \verb|length| & The length the GTIN should be \\
+  \hline
+  \verb|total| & The running total of all the multiplications \\
+  \hline
+  \verb|checkdig| & The 8th digit in a verification \\
+  \hline
+  \verb|rounded| & \verb|total| Rounded up to the nearest 10 \\ 
+  \hline
+  \verb|result| & The 8th digit as the program calculates it \\
+  \hline
+  \verb|again| & The choice of wether the user wants to run the program again \\
+  \hline 
+\end{tabular}
+\end{center}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Testing
-\marginpar{test}
-
+\subsection{Task 2}
 \begin{center}
 \begin{tabular}{ | m{13em} | m{16em}| m{14em} | } 
  \hline
@@ -252,7 +269,6 @@ Testing
  \hline
 \end{tabular}
 \end{center}
-
 
 
 \end{document}
