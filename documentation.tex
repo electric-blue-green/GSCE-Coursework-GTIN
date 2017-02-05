@@ -300,17 +300,22 @@ END
 \paragraph{Objective 1: Take an input and verify that it is 8 or 7 numerical digits}
 \subparagraph{\texttt{start()} Function} ~ \par ~ \par
 \noindent\includegraphics{task1_start()function.png}
-This function takes a user input of 'ask' to decide if the user wants to either calculate the 8th GTIN digit from 7 digits (choice \verb|c|), or verify the 8th GTIN digit from 8 digits (choice \verb|v|). If the choice is \verb|c|, the program creates the variables \verb|gtin| and \verb|length|, and sets \verb|length| to 7. It then calls the \verb|check()| function carrying \verb|length| with it. \parIf the choice is \verb|v|, the program creates the variables \verb|gtin| and \verb|length|, and sets \verb|length| to 8. It then calls the \verb|check()| function carrying \verb|length| with it.
+This function takes a user input of 'ask' to decide if the user wants to either calculate the 8th GTIN digit from 7 digits (choice \verb|c|), or verify the 8th GTIN digit from 8 digits (choice \verb|v|). 
+If the choice is \verb|c|, the program creates the variables \verb|gtin| and \verb|length|, and sets \verb|length| to 7. It then calls the \verb|check()| function carrying \verb|length| with it. \par
+If the choice is \verb|v|, the program creates the variables \verb|gtin| and \verb|length|, and sets \verb|length| to 8. It then calls the \verb|check()| function carrying \verb|length| with it.
 \par
 \subparagraph{\texttt{check()} Function} ~ \par ~ \par
 \noindent\includegraphics{task1_check()function2.png} ~ \par
 \noindent\includegraphics{task1_check()function3.png} ~\par
-This function prints a statement asking the user for the \verb|length| length GTIN. It then takes the user input of \verb|gtin|. \parIf the length of \verb|gtin| is equal to \verb|length| and \verb|gtin.isnumeric| function is True (the variable is numerical) then it creates the variable \verb|total|. Else, it prints an error message, and returns to the \verb|check()| function.\newpage
+This function prints a statement asking the user for the \verb|length| length GTIN. It then takes the user input of \verb|gtin|. \par
+If the length of \verb|gtin| is equal to \verb|length| and \verb|gtin.isnumeric| function is True (the variable is numerical) then it creates the variable \verb|total|. Else, it prints an error message, and returns to the \verb|check()| function.
+\newpage
 
 \paragraph{Objective 2: Calculate the 8th check digit}
 \subparagraph{Multiply the first 7 numbers alternately by 3,1} ~ \par ~ \par
 \noindent\includegraphics{task1_multiply1.png} ~\par
-This snippet starts a loop for the value of \verb|counter|, which goes from 0 to 7, stepping by 2 each time. The counter could have gone 0 to 3 stepping by 1, but this would make it more complicated. The program then adds the following to \verb|total| : integer of: \verb|gtin| at position of \verb|counter| multiplied by 3. \par\noindent It then adds to following to \verb|total| : integer of \verb|gtin| at position of \verb|counter+1| multiplied by 1.
+This snippet starts a loop for the value of \verb|counter|, which goes from 0 to 7, stepping by 2 each time. The counter could have gone 0 to 3 stepping by 1, but this would make it more complicated. The program then adds the following to \verb|total| : integer of: \verb|gtin| at position of \verb|counter| multiplied by 3. \par
+\noindent It then adds to following to \verb|total| : integer of \verb|gtin| at position of \verb|counter+1| multiplied by 1.
 \subparagraph{Total these results} ~\par
 \noindent The program simply adds all of these calculations to \verb|total|
 \subparagraph{Subtract this sum from its nearest highest multiple of 10} ~\par ~\par
@@ -318,10 +323,49 @@ This snippet starts a loop for the value of \verb|counter|, which goes from 0 to
 This snippet checks to see if the loop is on its final iteration (\verb|counter| = 6). It then sets \verb|checkdig| to the penultimate digit of \verb?gtin?. It then creates the variable \verb?rounded? and sets it to to the nearest highest multiple of 10 of \verb?total?. It then creates the variable \verb?result? and sets it to the result of \verb?rounded? - \verb?total?.
 \paragraph{Objective 3: Compare this to the given 8th number, or complete the 7-digit number} ~\par ~\par
 \noindent\includegraphics{task1_compare1.png} ~\par
-In this section of code, if \verb?length? equals 7, the program prints the final check digit (\verb?result?), and also prints the whole calculated GTIN (\verb?gtin? and \verb?result?). It then calls the \verb|park()| functionElse, if \verb?checkdig? is equal to \verb?result?, it prints that \verb?gtin? is a valid number. Else, it prints that \verb?gtin? is an invalid number.
+In this section of code, if \verb?length? equals 7, the program prints the final check digit (\verb?result?), and also prints the whole calculated GTIN (\verb?gtin? and \verb?result?). It then calls the \verb|park()| function
+Else, if \verb?checkdig? is equal to \verb?result?, it prints that \verb?gtin? is a valid number. Else, it prints that \verb?gtin? is an invalid number.
+
+\newpage
+\subsection{Task 2}
+\paragraph{Objective 1: Take an input and validate that it is 8 numerical digits} ~\par ~\par
+\noindent\includegraphics{task2_obj1_1.png} ~\par
+This function takes the user input \verb?var?. If it is 8 digits long and \verb|var.isnumeric| function is True (the variable is numerical) , it calls findStock function, carrying \verb?con? and \verb?cur? (variables for SQL database connection), \verb?currentOrder?, and \verb?var?. Else, it prints an error message and returns to \verb|verify()| function.
+\paragraph{Objective 2: Connect to a SQL database and run a query} ~\par ~\par
+\noindent\includegraphics{task2_obj2_1.png} ~\par
+This snippet uses the sqlite3 library to connect to the database file \verb?dbuse.db?. ~\par ~\par\noindent\includegraphics{task2_obj2_2.png} ~\par
+The \verb|findStock()| function executes the SQL query to find the record in \verb?Inventory? where GTIN is equal to \verb?var?. It then sets the variable \verb?results? to the results of this query. ~\par
+\paragraph{Objective 3: Collect and display the results} ~\par ~\par
+\noindent\includegraphics{task2_obj3_1.png} \par
+This section of code formats the product name: If the product has no size, it displays the name. If it has a small/medium/large quantity, it appends that to the end. If it has a ml volume, it appends that to the front. It then prints the name of the product as product name, volume, price, stock available.
+\newpage
+\paragraph{Objective 4: Update the database with the customer?s order} ~\par ~\par
+\noindent\includegraphics{task2_obj4_1.png} \par 
+This section of \verb|enterOrder()| function ensures that the customer can only order more than 1, and less than or equal the number of stock available. ~\par ~\par
+\noindent\includegraphics{task2_obj4_2.png} \par
+This section creates a verbose receipt, and makes an SQL query to update the database with the new stock levels
+\paragraph{Objective 5: Print a receipt} ~\par ~\par
+\noindent\includegraphics{task2_obj5_1.png} \par 
+\paragraph{Objective 6: Cope with SQL errors} ~\par ~\par
+\noindent\includegraphics{task2_obj6_1.png} \par
+If the user enters an invalid number, the \verb|sqlite3| library may get confused, and may enter an error loop. To break this loop, the user has to force the library to send another invalid request to the database.
+\newpage\subsection{Task 3}\paragraph{Objective 1: Scan a database and find stock to order} ~\par ~\par\noindent\includegraphics{task3_obj1_1.png} \par 
+The \verb|findStock()| function sends a SQL query to the database to find any record where the stock level does not equal the target stock level. It then sets the variable \verb?results? to these results.
+\paragraph{Objective 2: Create a receipt of the order} ~\par ~\par
+\noindent\includegraphics{task3_obj2_1.png} \par 
+This section is similar to Task 2 Objective 4, and formats a verbose name of the product, and adds it to the receipt list.
+\paragraph{Objective 3: Update the database with the updated stock level} ~\par ~\par\noindent\includegraphics{task3_obj3_1.png} \par 
+This function connects to the SQL database and updates the new stock levels. If it fails, it returns to the last function. 
+\paragraph{Objective 4: Cope with any SQL errors} ~\par ~\par
+\noindent\includegraphics{task3_obj4_1.png} \par 
+There should not be any SQL errors, as the user does not input any information that is used directly in the SQL query. This also protects against SQL injection.%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\section{Testing}
+\subsection{Task 1}
+\paragraph{Objective 1: Input strings of incorrect length. If rejected, it passes}
 
 
-\subsection{Task 2}
 
 
 
