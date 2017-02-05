@@ -14,3 +14,14 @@
 \contentsline {section}{\numberline {4}Data Structure}{8}
 \contentsline {subsection}{\numberline {4.1}Task 1}{8}
 \contentsline {subsection}{\numberline {4.2}Task 2}{8}
+\contentsline {subsection}{\numberline {4.3}Task 3}{8}
+\contentsline {section}{\numberline {5}Development}{9}
+\contentsline {subsection}{\numberline {5.1}Task 1}{9}
+\contentsline {paragraph}{Objective 1: Take an input and verify that it is 8 or 7 numerical digits}{9}
+\contentsline {subparagraph}{\texttt {start()} Function}{9}
+\contentsline {subparagraph}{\texttt {check()} Function}{9}
+\contentsline {paragraph}{Objective 2: Calculate the 8th check digit}{10}
+\contentsline {subparagraph}{Multiply the first 7 numbers alternately by 3,1}{10}
+\contentsline {subparagraph}{Total these results}{10}
+\contentsline {subparagraph}{Subtract this sum from its nearest highest multiple of 10}{10}
+\contentsline {paragraph}{Objective 3: Compare this to the given 8th number, or complete the 7-digit number}{10}

@@ -270,5 +270,59 @@ END
 \end{tabular}
 \end{center}
 
+\subsection{Task 3}
+\begin{center}
+\begin{tabular}{ | m{13em} | m{16em}| m{14em} | } 
+  \hline
+  Variable Name & Variable Description & Value \\ [0.5ex] 
+  \hline\hline
+  \verb|con| and \verb|cur| & Connections to SQL database & N/A \\
+  \hline
+  \verb|sql1| & SQL command for finding reduced stock levels & \verb|SELECT* FROM Inventory| \verb|WHERE StockAvab !=| \verb|Target Stock| \\
+  \hline
+  \verb|results| & Fetchall results from SQL query & N/A, List	\\
+  \hline
+  \verb|toOrder| & Value of how much stock needs to be ordered for each product & \verb|targetStock| - \verb|stockAvab| \\
+  \hline
+  \verb|sizeName| and \verb|sizeNameRaw| & Used to correctly format the product name & N/A \\
+  \hline
+  \verb|stockOrderAddRaw| and \verb|stockOrderAdd| and \verb|stockOrder| & Used to format the list of the stock update order & N/A \\
+  \hline
+  \verb|orderList| & Final order list & N/A \\
+  \hline
+  \end{tabular}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Development}
+\subsection{Task 1}
+\paragraph{Objective 1: Take an input and verify that it is 8 or 7 numerical digits}
+\subparagraph{\texttt{start()} Function} ~ \par ~ \par
+\noindent\includegraphics{task1_start()function.png}
+This function takes a user input of 'ask' to decide if the user wants to either calculate the 8th GTIN digit from 7 digits (choice \verb|c|), or verify the 8th GTIN digit from 8 digits (choice \verb|v|). If the choice is \verb|c|, the program creates the variables \verb|gtin| and \verb|length|, and sets \verb|length| to 7. It then calls the \verb|check()| function carrying \verb|length| with it. \parIf the choice is \verb|v|, the program creates the variables \verb|gtin| and \verb|length|, and sets \verb|length| to 8. It then calls the \verb|check()| function carrying \verb|length| with it.
+\par
+\subparagraph{\texttt{check()} Function} ~ \par ~ \par
+\noindent\includegraphics{task1_check()function2.png} ~ \par
+\noindent\includegraphics{task1_check()function3.png} ~\par
+This function prints a statement asking the user for the \verb|length| length GTIN. It then takes the user input of \verb|gtin|. \parIf the length of \verb|gtin| is equal to \verb|length| and \verb|gtin.isnumeric| function is True (the variable is numerical) then it creates the variable \verb|total|. Else, it prints an error message, and returns to the \verb|check()| function.\newpage
+
+\paragraph{Objective 2: Calculate the 8th check digit}
+\subparagraph{Multiply the first 7 numbers alternately by 3,1} ~ \par ~ \par
+\noindent\includegraphics{task1_multiply1.png} ~\par
+This snippet starts a loop for the value of \verb|counter|, which goes from 0 to 7, stepping by 2 each time. The counter could have gone 0 to 3 stepping by 1, but this would make it more complicated. The program then adds the following to \verb|total| : integer of: \verb|gtin| at position of \verb|counter| multiplied by 3. \par\noindent It then adds to following to \verb|total| : integer of \verb|gtin| at position of \verb|counter+1| multiplied by 1.
+\subparagraph{Total these results} ~\par
+\noindent The program simply adds all of these calculations to \verb|total|
+\subparagraph{Subtract this sum from its nearest highest multiple of 10} ~\par ~\par
+\noindent\includegraphics{task1_subtract1.png} ~\par
+This snippet checks to see if the loop is on its final iteration (\verb|counter| = 6). It then sets \verb|checkdig| to the penultimate digit of \verb?gtin?. It then creates the variable \verb?rounded? and sets it to to the nearest highest multiple of 10 of \verb?total?. It then creates the variable \verb?result? and sets it to the result of \verb?rounded? - \verb?total?.
+\paragraph{Objective 3: Compare this to the given 8th number, or complete the 7-digit number} ~\par ~\par
+\noindent\includegraphics{task1_compare1.png} ~\par
+In this section of code, if \verb?length? equals 7, the program prints the final check digit (\verb?result?), and also prints the whole calculated GTIN (\verb?gtin? and \verb?result?). It then calls the \verb|park()| functionElse, if \verb?checkdig? is equal to \verb?result?, it prints that \verb?gtin? is a valid number. Else, it prints that \verb?gtin? is an invalid number.
+
+
+\subsection{Task 2}
+
+
 
 \end{document}
