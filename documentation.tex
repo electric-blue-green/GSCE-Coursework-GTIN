@@ -10,6 +10,7 @@
 \usepackage{tabu}
 \usepackage{listings}
 
+
 \title{Computing GCSE Coursework}
 \author{\\ \\ \\ \\ Thomas Bass\\Candidate 4869\\Centre 52423\\OCR A453 Programming Project\\\\Made with \LaTeX}
 \date{2016-2017}
@@ -23,7 +24,7 @@
 \rfoot{Page \thepage}
 
 \begin{document}
-
+%\sffamily
 \maketitle
 \pagebreak
 \renewcommand*\contentsname{Summary}
@@ -333,7 +334,8 @@ Else, if \verb?checkdig? is equal to \verb?result?, it prints that \verb?gtin? i
 This function takes the user input \verb?var?. If it is 8 digits long and \verb|var.isnumeric| function is True (the variable is numerical) , it calls findStock function, carrying \verb?con? and \verb?cur? (variables for SQL database connection), \verb?currentOrder?, and \verb?var?. Else, it prints an error message and returns to \verb|verify()| function.
 \paragraph{Objective 2: Connect to a SQL database and run a query} ~\par ~\par
 \noindent\includegraphics{task2_obj2_1.png} ~\par
-This snippet uses the sqlite3 library to connect to the database file \verb?dbuse.db?. ~\par ~\par\noindent\includegraphics{task2_obj2_2.png} ~\par
+This snippet uses the sqlite3 library to connect to the database file \verb?dbuse.db?. ~\par ~\par
+\noindent\includegraphics{task2_obj2_2.png} ~\par
 The \verb|findStock()| function executes the SQL query to find the record in \verb?Inventory? where GTIN is equal to \verb?var?. It then sets the variable \verb?results? to the results of this query. ~\par
 \paragraph{Objective 3: Collect and display the results} ~\par ~\par
 \noindent\includegraphics{task2_obj3_1.png} \par
@@ -349,23 +351,40 @@ This section creates a verbose receipt, and makes an SQL query to update the dat
 \paragraph{Objective 6: Cope with SQL errors} ~\par ~\par
 \noindent\includegraphics{task2_obj6_1.png} \par
 If the user enters an invalid number, the \verb|sqlite3| library may get confused, and may enter an error loop. To break this loop, the user has to force the library to send another invalid request to the database.
-\newpage\subsection{Task 3}\paragraph{Objective 1: Scan a database and find stock to order} ~\par ~\par\noindent\includegraphics{task3_obj1_1.png} \par 
+
+\newpage
+\subsection{Task 3}
+\paragraph{Objective 1: Scan a database and find stock to order} ~\par ~\par
+\noindent\includegraphics{task3_obj1_1.png} \par 
 The \verb|findStock()| function sends a SQL query to the database to find any record where the stock level does not equal the target stock level. It then sets the variable \verb?results? to these results.
 \paragraph{Objective 2: Create a receipt of the order} ~\par ~\par
 \noindent\includegraphics{task3_obj2_1.png} \par 
 This section is similar to Task 2 Objective 4, and formats a verbose name of the product, and adds it to the receipt list.
-\paragraph{Objective 3: Update the database with the updated stock level} ~\par ~\par\noindent\includegraphics{task3_obj3_1.png} \par 
+\paragraph{Objective 3: Update the database with the updated stock level} ~\par ~\par
+\noindent\includegraphics{task3_obj3_1.png} \par 
 This function connects to the SQL database and updates the new stock levels. If it fails, it returns to the last function. 
 \paragraph{Objective 4: Cope with any SQL errors} ~\par ~\par
 \noindent\includegraphics{task3_obj4_1.png} \par 
-There should not be any SQL errors, as the user does not input any information that is used directly in the SQL query. This also protects against SQL injection.%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+There should not be any SQL errors, as the user does not input any information that is used directly in the SQL query. This also protects against SQL injection.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 
 \section{Testing}
 \subsection{Task 1}
-\paragraph{Objective 1: Input strings of incorrect length. If rejected, it passes}
-
-
+\paragraph{Test 1: Input strings of incorrect length. If rejected, it passes} ~\par
+\noindent\includegraphics{testing_1.png} \par 
+\noindent\includegraphics{testing_2.png} \par 
+These show that the length verification is working.
+\paragraph{Test 2: Input strings of letters. If rejected, it passes} ~\par 
+\noindent\includegraphics{testing_3.png} \par 
+This shows that the numerical verification is working
+\paragraph{Test 3: Get program to run a valid input. Print out totals at each stage, and check them manually. If they are the same, it passes}~\par ~\par 
+\noindent\includegraphics{testing_4.png} \par 
+\noindent 1*3 = 3 \\3+3*1=6 \\6+2*3=12 \\ 12+4*1=16 \\16+5*3=31 \\31+6*1=37 \\37+2*3=43 \\Highest 10 of 43 = 50 \\50-43 = 7 \\ Checkdig = 7 \\
+\paragraph{Test 4: Run the program with a GTIN number taken from a product. If it correctly calculated and verified, it passes}~\par ~\par 
+\noindent\includegraphics{testing_5.png} \par 
+
 
 
 
