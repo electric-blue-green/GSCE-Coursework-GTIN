@@ -7,6 +7,8 @@ OCR A453
 
 THOMAS BASS
 
+**Now in version 1.0**
+
 ##Info
 
 ###LaTeX pacages required:
