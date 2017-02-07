@@ -9,7 +9,7 @@
 \usepackage{array}
 \usepackage{tabu}
 \usepackage{listings}
-
+\usepackage[export]{adjustbox}
 
 \title{Computing GCSE Coursework}
 \author{\\ \\ \\ \\ Thomas Bass\\Candidate 4869\\Centre 52423\\OCR A453 Programming Project\\\\Made with \LaTeX}
@@ -24,7 +24,7 @@
 \rfoot{Page \thepage}
 
 \begin{document}
-%\sffamily
+
 \maketitle
 \pagebreak
 \renewcommand*\contentsname{Summary}
@@ -381,10 +381,83 @@ These show that the length verification is working.
 This shows that the numerical verification is working
 \paragraph{Test 3: Get program to run a valid input. Print out totals at each stage, and check them manually. If they are the same, it passes}~\par ~\par 
 \noindent\includegraphics{testing_4.png} \par 
-\noindent 1*3 = 3 \\3+3*1=6 \\6+2*3=12 \\ 12+4*1=16 \\16+5*3=31 \\31+6*1=37 \\37+2*3=43 \\Highest 10 of 43 = 50 \\50-43 = 7 \\ Checkdig = 7 \\
+\noindent 1*3 = 3 \\
+3+3*1=6 \\
+6+2*3=12 \\ 
+12+4*1=16 \\
+16+5*3=31 \\
+31+6*1=37 \\
+37+2*3=43 \\
+Highest 10 of 43 = 50 \\
+50-43 = 7 \\ 
+Checkdig = 7 \\
 \paragraph{Test 4: Run the program with a GTIN number taken from a product. If it correctly calculated and verified, it passes}~\par ~\par 
-\noindent\includegraphics{testing_5.png} \par 
-
+\noindent\includegraphics{testing_5.png} 
+\noindent\includegraphics{testing_6.png} \par 
+This shows that my program works in a real world situation, and can easily verify or calculate real GTIN codes.
+
+\subsection{Task 2}	
+\paragraph{Test 1: Input strings of incorrect length. If rejected, it passes} ~\par ~\par
+\noindent\includegraphics{testing_7.png} 
+\noindent\includegraphics{testing_8.png} \par 
+From these, you can see that my length verification is working.
+\paragraph{Test 2: Input strings of letters. If rejected, it passes} ~\par ~\par
+\noindent\includegraphics{testing_9.png} \par
+From this, you can see that my numerical verification is working.
+\paragraph{Test 3: Input a valid string to search. If product found, it passes} ~\par ~\par
+\noindent\includegraphics{testing_10.png} \par
+The program successfully located a valid product
+\newpage
+\paragraph{Test 4: Manually check that the program has displayed the correct stock level and information. If it has, it passes.} ~\par ~\par
+\noindent\includegraphics{testing_11.png} \par
+The program has displayed the correct information for product \verb|#11440529|
+\paragraph{Test 5: Order a quantity of the product. If the program updates the stock levels, it passes.} ~\par ~\par
+\noindent\includegraphics{testing_12.png}
+\noindent\includegraphics{testing_13.png} \par
+The program successfully ordered 5 of \verb|#11440529| and updated the database
+\paragraph{Test 6: Complete a full order. If the program displays a receipt with the correct values, it passes} ~\par ~\par
+\noindent\includegraphics{testing_14.png}
+The program successfully ordered the products, printed a receipt, and calculated the correct cost.
+\paragraph{Test 7: Provide the program with invalid values (such as ordering negative values). If the program rejects these, it passes.} ~\par ~\par
+\noindent\includegraphics{testing_15.png}
+\noindent\includegraphics{testing_16.png}
+\noindent\includegraphics{testing_17.png} \par
+This shows that the program rejects negative and 0 quantities, as well as quantities above the stock level. 
+\newpage
+\subsection{Task 3}
+\paragraph{Test 1: Edit database for reduced stock. If reduced stock is identified, it passes} ~\par ~\par
+%testing_18.png is missing
+\noindent\includegraphics{testing_19.png} \par
+\noindent\includegraphics{testing_20.png} \par
+This shows that the program can correctly identify a reduced stock
+\paragraph{Test 2: Edit database for reduced stock. If a human-readable receipt is produced, it passes} ~\par ~\par
+\noindent\includegraphics{testing_21.png} \par
+\noindent\includegraphics{testing_22.png} \par
+This shows that the program can correctly identify two reduced stock levels, and append them to a verbose receipt
+\paragraph{Test 3: Complete order for reduced stock. If the database updated, it passes.} ~\par ~\par
+\noindent\includegraphics{testing_23.png}
+\noindent\includegraphics{testing_24.png} \par
+This shows that the program can update the database with the new stock level
+\paragraph{Test 4: If the program handles SQL errors, it passes} ~\par ~\par
+\noindent\includegraphics{testing_24.png} \par
+The program does not allow the user to order any stock if all stock levels are up to date
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Final Program Code}
+\subsection{Task 1}
+\noindent\includegraphics[width=1\textwidth, left]{task1FINALCODE.png} \par 
+\newpage
+\subsection{Task 2}
+\noindent\includegraphics[width=1\textwidth, left]{task2FINALCODE1.png} \par
+\noindent\includegraphics[width=1.039\textwidth, left]{task2FINALCODE2.png} \par
+\noindent\includegraphics[width=0.85\textwidth, left]{task2FINALCODE3.png}
+\newpage
+\subsection{Task 3}
+\noindent\includegraphics[width=1\textwidth, left]{task3FINALCODE1.png} \par
+\noindent\includegraphics[width=0.955\textwidth, left]{task3FINALCODE2.png} \par
+
 
 
 

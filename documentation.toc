@@ -43,3 +43,20 @@
 \contentsline {paragraph}{Test 2: Input strings of letters. If rejected, it passes}{14}
 \contentsline {paragraph}{Test 3: Get program to run a valid input. Print out totals at each stage, and check them manually. If they are the same, it passes}{14}
 \contentsline {paragraph}{Test 4: Run the program with a GTIN number taken from a product. If it correctly calculated and verified, it passes}{15}
+\contentsline {subsection}{\numberline {6.2}Task 2}{15}
+\contentsline {paragraph}{Test 1: Input strings of incorrect length. If rejected, it passes}{15}
+\contentsline {paragraph}{Test 2: Input strings of letters. If rejected, it passes}{15}
+\contentsline {paragraph}{Test 3: Input a valid string to search. If product found, it passes}{15}
+\contentsline {paragraph}{Test 4: Manually check that the program has displayed the correct stock level and information. If it has, it passes.}{16}
+\contentsline {paragraph}{Test 5: Order a quantity of the product. If the program updates the stock levels, it passes.}{16}
+\contentsline {paragraph}{Test 6: Complete a full order. If the program displays a receipt with the correct values, it passes}{16}
+\contentsline {paragraph}{Test 7: Provide the program with invalid values (such as ordering negative values). If the program rejects these, it passes.}{16}
+\contentsline {subsection}{\numberline {6.3}Task 3}{17}
+\contentsline {paragraph}{Test 1: Edit database for reduced stock. If reduced stock is identified, it passes}{17}
+\contentsline {paragraph}{Test 2: Edit database for reduced stock. If a human-readable receipt is produced, it passes}{17}
+\contentsline {paragraph}{Test 3: Complete order for reduced stock. If the database updated, it passes.}{17}
+\contentsline {paragraph}{Test 4: If the program handles SQL errors, it passes}{17}
+\contentsline {section}{\numberline {7}Final Program Code}{18}
+\contentsline {subsection}{\numberline {7.1}Task 1}{18}
+\contentsline {subsection}{\numberline {7.2}Task 2}{19}
+\contentsline {subsection}{\numberline {7.3}Task 3}{20}
