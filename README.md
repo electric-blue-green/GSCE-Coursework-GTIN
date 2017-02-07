@@ -13,13 +13,13 @@ THOMAS BASS
 
 ####Default:
 
-*Geometry
-*[english]Babel
-*[utf8]imputenc
-*natbib
-*graphicx
-*fancyhdr
-*array
-*tabu
-*listings
-*[export]adjustbox
+* Geometry
+* [english]Babel
+* [utf8]imputenc
+* natbib
+* graphicx
+* fancyhdr
+* array
+* tabu
+* listings
+* [export]adjustbox
