@@ -298,20 +298,34 @@ END
 
 \section{Development}
 \subsection{Task 1}
+For all my development, the code was written in Python's IDLE, an integrated development environment which comes packaged with Python installs.
 \paragraph{Objective 1: Take an input and verify that it is 8 or 7 numerical digits}
 \subparagraph{\texttt{start()} Function} ~ \par ~ \par
-\noindent\includegraphics{task1_start()function.png}
+\noindent\includegraphics[width=1\textwidth, left, width=\linewidth, frame]{task1_start()functionDev.png}
 This function takes a user input of 'ask' to decide if the user wants to either calculate the 8th GTIN digit from 7 digits (choice \verb|c|), or verify the 8th GTIN digit from 8 digits (choice \verb|v|). 
 If the choice is \verb|c|, the program creates the variables \verb|gtin| and \verb|length|, and sets \verb|length| to 7. It then calls the \verb|check()| function carrying \verb|length| with it. \par
-If the choice is \verb|v|, the program creates the variables \verb|gtin| and \verb|length|, and sets \verb|length| to 8. It then calls the \verb|check()| function carrying \verb|length| with it.
-\par
+If the choice is \verb|v|, the program creates the variables \verb|gtin| and \verb|length|, and sets \verb|length| to 8. It then calls the \verb|check()| function carrying \verb|length| with it. \par
+The first revision produced syntax errors on line 4 and 6. This is because the variable has to be re-stated after an \verb|or| condition. After this was corrected, the IDLE gave the following error: \par
+\noindent\includegraphics[width=1\textwidth, left, width=\linewidth, frame]{task1_start()functionDev2.png}
+This error was produced as the incorrect operators were used in lines 5 and 7. The IDLE interpreted the code to compare \verb|length| to the number 7 (line 5) or 8 (line 7). These were then corrected to \verb|length = 7| and \verb|length = 8| respectively. The program then gave the following output: \par
+\noindent\includegraphics[width=0.9\textwidth, left, width=\linewidth, frame]{task1_start()functionDev3.png} \par
+From the following code: \par
+\noindent\includegraphics[width=0.7\textwidth, left]{task1_start()function.png} \par
+This shows that the \verb|start()| function is working correctly
+\newpage
 \subparagraph{\texttt{check()} Function} ~ \par ~ \par
+\noindent\includegraphics[width=0.5\textwidth, left, width=\linewidth, frame]{task1_check()functionDEV.png} \par
+This function prints a statement asking the user for the \verb|length| length GTIN. It then takes the user input of \verb|gtin|. \par
+If the length of \verb|gtin| is equal to \verb|length| and \verb|gtin.isnumeric| function is True (the variable is numerical) then it creates the variable \verb|total|. Else, it prints an error message, and returns to the \verb|check()| function. \par
+The first revision gave a syntax error on line 4, as there was a missing colon. This was added, and the second revision ran, and rejected incorrect lengths, but allowed correct lengths including letters. The \verb|math| Python library provides the \verb|isnumeric| function that gives boolean \verb|False| if the variable carried contains characters other than numerical. This was used as \verb|if gtin.isnumeric() == True|. The program then gave the following output: \par
+\noindent\includegraphics[width=0.5\textwidth, left, width=\linewidth, frame]{task1_check()functionDEV1.png} \par
+The program worked and rejected invalid strings, but if the user had entered an invalid input, the program would reject it, but terminate the program. The code was then added after line 7 to call \verb|check(length)| after an invalid input. \verb|length| is carried so that the program does not have to re-start. The program then ran the following output: \par
+\noindent\includegraphics[width=0.5\textwidth, left, width=\linewidth, frame]{task1_check()functionDEV2.png} \par
+With the following code: \par
 \noindent\includegraphics{task1_check()function2.png} ~ \par
 \noindent\includegraphics{task1_check()function3.png} ~\par
-This function prints a statement asking the user for the \verb|length| length GTIN. It then takes the user input of \verb|gtin|. \par
-If the length of \verb|gtin| is equal to \verb|length| and \verb|gtin.isnumeric| function is True (the variable is numerical) then it creates the variable \verb|total|. Else, it prints an error message, and returns to the \verb|check()| function.
+This shows that the program is correctly calling \verb|check(length)|, and is working correctly.
 \newpage
-
 \paragraph{Objective 2: Calculate the 8th check digit}
 \subparagraph{Multiply the first 7 numbers alternately by 3,1} ~ \par ~ \par
 \noindent\includegraphics{task1_multiply1.png} ~\par
@@ -326,6 +340,11 @@ This snippet checks to see if the loop is on its final iteration (\verb|counter|
 \noindent\includegraphics{task1_compare1.png} ~\par
 In this section of code, if \verb?length? equals 7, the program prints the final check digit (\verb?result?), and also prints the whole calculated GTIN (\verb?gtin? and \verb?result?). It then calls the \verb|park()| function
 Else, if \verb?checkdig? is equal to \verb?result?, it prints that \verb?gtin? is a valid number. Else, it prints that \verb?gtin? is an invalid number.
+\subparagraph{\texttt{park()} Function} ~ \par ~ \par
+The \verb|park()| function is used after a verification or calculation has been made, and allows the user to carry out more verifications or calculations without restarting the program. \par
+\noindent\includegraphics[width=0.7\textwidth, left, width=\linewidth, frame]{task1_park().png} \par
+This program asks the user if they want to restart the program. If yet, it calls \verb|start()| function, and if no it ends the program. The \verb|sys| Python library provides the \verb|.exit()| function to terminate the program. In IDLE it simply ends it, but when compiled into command line it will close the window.
+
 
 \newpage
 \subsection{Task 2}
