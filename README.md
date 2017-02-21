@@ -9,6 +9,10 @@ THOMAS BASS
 
 **Now in version 1.0**
 
+**Wodcount @ 1678**
+
+[Wordcounter](http://app.uio.no/ifi/texcount/online.php)
+
 ##Info
 
 ###LaTeX pacages required:
