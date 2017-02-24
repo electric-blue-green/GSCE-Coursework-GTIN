@@ -9,9 +9,12 @@ THOMAS BASS
 
 **Now in version 1.0**
 
-**Wodcount @ 1678**
+**Wordcount @ 1678**
 
 [Wordcounter](http://app.uio.no/ifi/texcount/online.php)
+
+Linked to **Homework** Planner on SharePoint at [Homework@rgshw.onmicrosoft.com](https://tasks.office.com/rgshw.onmicrosoft.com/en-GB/Home/PlanViews/3Kba8GTx70Cn-PL5xPL38ZYAAMD1)
+
 
 ##Info
 
