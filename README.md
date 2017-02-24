@@ -18,7 +18,7 @@ Linked to **Homework** Planner on SharePoint at [Homework@rgshw.onmicrosoft.com]
 
 ##Info
 
-###LaTeX pacages required:
+###LaTeX packages required:
 
 ####Default:
 
