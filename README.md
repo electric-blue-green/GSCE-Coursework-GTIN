@@ -7,7 +7,9 @@ OCR A453
 
 THOMAS BASS
 
-**Now in version 1.0**
+**Now in version 2.0**
+
+**Documentation is now Draft 2**
 
 **Wordcount @ 1730**
 
