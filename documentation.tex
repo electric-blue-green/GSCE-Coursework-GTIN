@@ -150,11 +150,14 @@ Verify Function:
         result = roundedNumber - total
           If Length = 7:
             Print result
+            ASK User to repeat
           ELSE
             If GTIN at position Length = result:
               Print GTIN is a valid number
+              ASK User to repeat
             ELSE:
               Print GTIN is an invalid number
+              ASK User to repeat
             ENDIF
       ELSE
         Multiply GTIN at position of counter+1 by 1 and add to total
