@@ -9,7 +9,7 @@ THOMAS BASS
 
 **Now in version 1.0**
 
-**Wordcount @ 1678**
+**Wordcount @ 1730**
 
 [Wordcounter](http://app.uio.no/ifi/texcount/online.php)
 
