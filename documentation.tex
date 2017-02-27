@@ -363,11 +363,18 @@ The \verb|findStock()| function executes the SQL query to find the record in \ve
 \noindent\includegraphics{task2_obj3_1.png} \par
 This section of code formats the product name: If the product has no size, it displays the name. If it has a small/medium/large quantity, it appends that to the end. If it has a ml volume, it appends that to the front. It then prints the name of the product as product name, volume, price, stock available.
 \newpage
-\paragraph{Objective 4: Update the database with the customer?s order} ~\par ~\par
+\paragraph{Objective 4: Update the database with the customer's order} ~\par ~\par
 \noindent\includegraphics{task2_obj4_1.png} \par 
 This section of \verb|enterOrder()| function ensures that the customer can only order more than 1, and less than or equal the number of stock available. ~\par ~\par
-\noindent\includegraphics{task2_obj4_2.png} \par
-This section creates a verbose receipt, and makes an SQL query to update the database with the new stock levels
+\noindent\includegraphics[width=0.8\textwidth, left, width=\linewidth, frame]{objective4_dev.png} \par
+This section creates a verbose receipt, and makes an SQL query to update the database with the new stock levels. \par
+When this was tested, it produced this output: \par
+\noindent\includegraphics[width=0.8\textwidth, left, width=\linewidth, frame]{obj4error.png} \par 
+The calculation for the final cost was broken as Python can not read over a line break. The line break in line 5 and 6 was stopping the full calculation. This was fixed: \par
+\noindent\includegraphics[width=0.8\textwidth, left, width=\linewidth, frame]{obj4fixed.png} \par 
+The program was then tested to give the following correct output: \par
+\noindent\includegraphics[width=0.8\textwidth, left, width=\linewidth, frame]{obj4fixedproof.png} \par 
+\newpage
 \paragraph{Objective 5: Print a receipt} ~\par ~\par
 \noindent\includegraphics{task2_obj5_1.png} \par 
 \paragraph{Objective 6: Cope with SQL errors} ~\par ~\par

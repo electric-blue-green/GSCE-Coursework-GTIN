@@ -50,8 +50,7 @@ def enterOrder(sizeName, product, var, results, currentOrder, cur, con):        
     print('Adding to order...')                                                 ## Print addint to order
     NewStockAvab = 0                                                            ## Set NewStockAvab = 0
     costOfOrder = float(product[3])*int(QtyToOrder)                             ## costOfOrder = product[3]*QtyToOrder
-    currentOrderAddRaw = str(QtyToOrder), ' x ', str(sizeName), ' ', str(product[1]), ' (GTIN: ', str(product[0]), ') @ £',   ## currentOrderAddRaw
-    str(product[3]), ' = £', str(costOfOrder)
+    currentOrderAddRaw = str(QtyToOrder), ' x ', str(sizeName), ' ', str(product[1]), ' (GTIN: ', str(product[0]), ') @ £', str(product[3]), ' = £', str(costOfOrder)
     currentOrderAdd = "".join(currentOrderAddRaw)                               ## currentOrderAdd = costOfOrder join ''
     print('Added to order!')                                                    ## Print adding to order
     print('Updating Stock Levels...')                                           ## Print updating stock levels
