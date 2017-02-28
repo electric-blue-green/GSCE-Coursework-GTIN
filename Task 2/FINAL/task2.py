@@ -11,7 +11,7 @@ def verify(con, cur, currentOrder):                                             
   var = input('Enter GTIN for the product you wish to purchase:\n> ')           ## input 'var'
   if len(var) == 8 and var.isnumeric() == True:                                 ## If 'var' = 8 and is numerical
     findStock(con, cur, currentOrder, var)                                      ## Call findStock
-  else:                                                                           ## Else
+  else:                                                                         ## Else
     print('Enter a 8 digit number')                                             ## Print error
     verify(con, cur, currentOrder)                                              ## call verify
 
@@ -40,13 +40,13 @@ def enterOrder(sizeName, product, var, results, currentOrder, cur, con):        
   if QtyToOrder.isnumeric() == False:                                           ## If QtyToOrder is not numerical
     print('Enter a valid Number')                                               ## Error
     enterOrder(sizeName, product, var, results, currentOrder, cur, con)         ## Call enterOrder
-  elif int(QtyToOrder) > int(product[4]):                                         ## Elif QtyToOrder > product[4]
+  elif int(QtyToOrder) > int(product[4]):                                       ## Elif QtyToOrder > product[4]
     print('Error: Not enough stock. Please order', product[4], 'or less')       ## Print
     enterOrder(sizeName, product, var, results, currentOrder, con, cur)         ## Call enterOrder
-  elif int(QtyToOrder) < 1:                                                       ## Elif QtyToOrder < 1
+  elif int(QtyToOrder) < 1:                                                     ## Elif QtyToOrder < 1
     print('You can\'t order less than 1. Try again')                            ## Print error
     enterOrder(sizeName, product, var, results, currentOrder, con, cur)         ## Call enterOrder
-  else:                                                                           ## else
+  else:                                                                         ## else
     print('Adding to order...')                                                 ## Print addint to order
     NewStockAvab = 0                                                            ## Set NewStockAvab = 0
     costOfOrder = float(product[3])*int(QtyToOrder)                             ## costOfOrder = product[3]*QtyToOrder

@@ -11,7 +11,7 @@ def verify(con, cur, currentOrder):
   var = input('Enter GTIN for the product you wish to purchase:\n> ')
   if len(var) == 8 and var.isnumeric() == True:
     findStock(con, cur, currentOrder, var)
-else:
+  else:
     print('Enter a 8 digit number')
     verify(con, cur, currentOrder)
 
@@ -40,13 +40,13 @@ def enterOrder(sizeName, product, var, results, currentOrder, cur, con):
   if QtyToOrder.isnumeric() == False:
     print('Enter a valid Number')
     enterOrder(sizeName, product, var, results, currentOrder, cur, con)
-elif int(QtyToOrder) > int(product[4]):
+  elif int(QtyToOrder) > int(product[4]):
     print('Error: Not enough stock. Please order', product[4], 'or less')
     enterOrder(sizeName, product, var, results, currentOrder, con, cur)
-elif int(QtyToOrder) < 1:
+  elif int(QtyToOrder) < 1:
     print('You can\'t order less than 1. Try again')
     enterOrder(sizeName, product, var, results, currentOrder, con, cur)
-else:
+  else:
     print('Adding to order...')
     NewStockAvab = 0
     costOfOrder = float(product[3])*int(QtyToOrder)
