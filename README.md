@@ -7,7 +7,7 @@ OCR A453
 
 THOMAS BASS
 
-**Now in version 2.0**
+**Now in version 2.1**
 
 **Documentation is now Draft 2**
 
@@ -34,3 +34,18 @@ Linked to **Homework** Planner on SharePoint at [Homework@rgshw.onmicrosoft.com]
 * tabu
 * listings
 * [export]adjustbox
+
+
+##Changelog
+
+###2.1
+
+* Sorted images into [/images]
+* Reworked file structure
+* Correctly named development images
+
+###2.0
+
+* Added testing into development
+* Added run-by-run testing commentry
+* Added all function commentry
