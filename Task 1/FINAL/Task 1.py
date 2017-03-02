@@ -3,9 +3,9 @@ import sys
 print('GCSE Controlled Assesment A453\nThomas Bass 4869\nTask 1')
 def start():
   ask = input('Press [c] to calculate the 8th digit from 7 \nPress [v] to vertify an 8 digit GTIN Number \n')   
-  if ask == 'c' or ask == 'C':      
+  if ask == "c" or ask == "C":
     length = 7                            
-  elif ask == 'v' or ask == 'V':      
+  elif ask == "v" or ask == "V":
     length = 8                            
   else:                         
     print('Error: Please enter either \'c\' or \'v\' ')   
@@ -14,7 +14,7 @@ def start():
 def check(length):                      
   print('Enter the', length, 'digit GTIN number')         
   gtin = input(': ')                      
-  if len(gtin) == length and gtin.isnumeric() == True:
+  if len(str(gtin)) == length and gtin.isnumeric() == True:
     total = 0
     for counter in range(0, 7, 2):                                          
       total = total + ((int(gtin[counter]))*3)                                  
