@@ -1,0 +1,63 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Objectives}{3}
+\contentsline {subsection}{\numberline {1.1}Task 1}{3}
+\contentsline {subsection}{\numberline {1.2}Task 2}{3}
+\contentsline {subsection}{\numberline {1.3}Task 3}{3}
+\contentsline {section}{\numberline {2}Test Plan}{4}
+\contentsline {subsection}{\numberline {2.1}Task 1}{4}
+\contentsline {subsection}{\numberline {2.2}Task 2}{4}
+\contentsline {subsection}{\numberline {2.3}Task 3}{5}
+\contentsline {section}{\numberline {3}Pseudocode}{6}
+\contentsline {subsection}{\numberline {3.1}Task 1}{6}
+\contentsline {subsection}{\numberline {3.2}Task 2}{7}
+\contentsline {subsection}{\numberline {3.3}Task 3}{7}
+\contentsline {section}{\numberline {4}Data Structure}{8}
+\contentsline {subsection}{\numberline {4.1}Task 1}{8}
+\contentsline {subsection}{\numberline {4.2}Task 2}{8}
+\contentsline {subsection}{\numberline {4.3}Task 3}{8}
+\contentsline {section}{\numberline {5}Development}{9}
+\contentsline {subsection}{\numberline {5.1}Task 1}{9}
+\contentsline {paragraph}{Objective 1: Take an input and verify that it is 8 or 7 numerical digits}{9}
+\contentsline {subparagraph}{\texttt {start()} Function}{9}
+\contentsline {subparagraph}{\texttt {check()} Function}{10}
+\contentsline {paragraph}{Objective 2: Calculate the 8th check digit}{11}
+\contentsline {subparagraph}{Multiply the first 7 numbers alternately by 3,1}{11}
+\contentsline {subparagraph}{Total these results}{11}
+\contentsline {subparagraph}{Subtract this sum from its nearest highest multiple of 10}{11}
+\contentsline {paragraph}{Objective 3: Compare this to the given 8th number, or complete the 7-digit number}{11}
+\contentsline {subparagraph}{\texttt {park()} Function}{11}
+\contentsline {subsection}{\numberline {5.2}Task 2}{12}
+\contentsline {paragraph}{Objective 1: Take an input and validate that it is 8 numerical digits}{12}
+\contentsline {paragraph}{Objective 2: Connect to a SQL database and run a query}{12}
+\contentsline {paragraph}{Objective 3: Collect and display the results}{12}
+\contentsline {paragraph}{Objective 4: Update the database with the customer's order}{13}
+\contentsline {paragraph}{Objective 5: Print a receipt}{14}
+\contentsline {paragraph}{Objective 6: Cope with SQL errors}{14}
+\contentsline {subsection}{\numberline {5.3}Task 3}{15}
+\contentsline {paragraph}{Objective 1: Scan a database and find stock to order}{15}
+\contentsline {paragraph}{Objective 2: Create a receipt of the order}{15}
+\contentsline {paragraph}{Objective 3: Update the database with the updated stock level}{15}
+\contentsline {paragraph}{Objective 4: Cope with any SQL errors}{15}
+\contentsline {section}{\numberline {6}Testing}{16}
+\contentsline {subsection}{\numberline {6.1}Task 1}{16}
+\contentsline {paragraph}{Test 1: Input strings of incorrect length. If rejected, it passes}{16}
+\contentsline {paragraph}{Test 2: Input strings of letters. If rejected, it passes}{16}
+\contentsline {paragraph}{Test 3: Get program to run a valid input. Print out totals at each stage, and check them manually. If they are the same, it passes}{16}
+\contentsline {paragraph}{Test 4: Run the program with a GTIN number taken from a product. If it correctly calculated and verified, it passes}{17}
+\contentsline {subsection}{\numberline {6.2}Task 2}{17}
+\contentsline {paragraph}{Test 1: Input strings of incorrect length. If rejected, it passes}{17}
+\contentsline {paragraph}{Test 2: Input strings of letters. If rejected, it passes}{17}
+\contentsline {paragraph}{Test 3: Input a valid string to search. If product found, it passes}{17}
+\contentsline {paragraph}{Test 4: Manually check that the program has displayed the correct stock level and information. If it has, it passes.}{18}
+\contentsline {paragraph}{Test 5: Order a quantity of the product. If the program updates the stock levels, it passes.}{18}
+\contentsline {paragraph}{Test 6: Complete a full order. If the program displays a receipt with the correct values, it passes}{18}
+\contentsline {paragraph}{Test 7: Provide the program with invalid values (such as ordering negative values). If the program rejects these, it passes.}{18}
+\contentsline {subsection}{\numberline {6.3}Task 3}{19}
+\contentsline {paragraph}{Test 1: Edit database for reduced stock. If reduced stock is identified, it passes}{19}
+\contentsline {paragraph}{Test 2: Edit database for reduced stock. If a human-readable receipt is produced, it passes}{19}
+\contentsline {paragraph}{Test 3: Complete order for reduced stock. If the database updated, it passes.}{19}
+\contentsline {paragraph}{Test 4: If the program handles SQL errors, it passes}{19}
+\contentsline {section}{\numberline {7}Final Program Code}{20}
+\contentsline {subsection}{\numberline {7.1}Task 1}{20}
+\contentsline {subsection}{\numberline {7.2}Task 2}{21}
+\contentsline {subsection}{\numberline {7.3}Task 3}{22}
