@@ -1,7 +1,7 @@
-[![forthebadge](http://forthebadge.com/images/badges/made-with-python.svg)](http://forthebadge.com)
-
 #OCR GCSE COMPUTING
 ##A453 Programming Project
+
+[![forthebadge](http://forthebadge.com/images/badges/made-with-python.svg)](http://forthebadge.com)
 
 NOT FOR PUBLIC USE
 
