@@ -33,8 +33,14 @@
   \hline
   Test Number & Test Name & Test Data & Test Type	\\ [0.5ex] 
   \hline\hline
-  1 & Input strings of incorrect length. If rejected, it passes & \verb|12345| & Error \\
-
+  1 & Edit database for reduced stock. If reduced stock is identified, it passes & Edit a stock level to -10 of stock level, print receipt & Normal \\
+  \hline
+  2 & Edit database for reduced stock. If a valid receipt is produced it passes & Edit two stock levels to -10 of stock level, print receipt & Normal \\
+  \hline
+  3 & Complete order for reduced stock. If the database updated, it passes & Manually check database after Test 2 & Normal \\
+  \hline
+  4 & Try SQL errors. If errors are all rejected, it passes & Force invalid SQL & Extreme \\
+  \hline
 \end{tabular}
 \end{center}
 

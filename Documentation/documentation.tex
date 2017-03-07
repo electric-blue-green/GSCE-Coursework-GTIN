@@ -119,20 +119,21 @@
 
 
 \subsection{Task 3}
-\begin{enumerate}
-\item{Edit database for reduced stock. If reduced stock is identified, it passes.}
-\item[~]{Test data: Edit a stock level to -10 of stock level.}
-\item[~]{Print receipt.}
-\item{Edit database for reduced stock. If a human-readable receipt is produced, it passes.}
-\item[~]{Test data: Edit two stock levels to -10 of stock level.}
-\item[~]{Print receipt.}
-\item{Complete order for reduced stock. If the database updated, it passes.}
-\item[~]{Continue from test area 2, and update database.}
-\item[~]{Check database manually.}
-\item{If the program handles SQL errors, it passes.}
-\item[~]{Attempt to update from more than stock level.}
-\end{enumerate}
-
+\begin{center}
+\begin{tabular}{ | m{4em} | m{19em} | m{10em} | m{5em} | }
+  \hline
+  Test Number & Test Name & Test Data & Test Type	\\ [0.5ex] 
+  \hline\hline
+  1 & Edit database for reduced stock. If reduced stock is identified, it passes & Edit a stock level to -10 of stock level, print receipt & Normal \\
+  \hline
+  2 & Edit database for reduced stock. If a valid receipt is produced it passes & Edit two stock levels to -10 of stock level, print receipt & Normal \\
+  \hline
+  3 & Complete order for reduced stock. If the database updated, it passes & Manually check database after Test 2 & Normal \\
+  \hline
+  4 & Try SQL errors. If errors are all rejected, it passes & Force invalid SQL & Extreme \\
+  \hline
+\end{tabular}
+\end{center}
 
 \pagebreak
 
