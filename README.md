@@ -2,6 +2,7 @@
 ##A453 Programming Project
 
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
+[![Documentation](https://img.shields.io/badge/documentation-Draft%202-brightgreen.svg)]()
 
 NOT FOR PUBLIC USE
 
