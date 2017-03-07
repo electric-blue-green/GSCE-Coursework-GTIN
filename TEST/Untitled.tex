@@ -1,0 +1,49 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+\geometry{a4paper, portrait, margin=1in}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{tabu}
+\usepackage{listings}
+\usepackage[export]{adjustbox}
+\graphicspath{{/Users/ThomasBass/GitHub/GSCE-Coursework-Python-GTIN/Images/}}
+\DeclareGraphicsExtensions{.png}
+
+\title{Computing GCSE Coursework}
+\author{\\ \\ \\ \\ Thomas Bass\\Candidate 4869\\Centre 52423\\OCR A453 Programming Project\\\\ Word Count 1730 \\\\\ Made with \LaTeX}
+\date{2016-2017}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Computing GCSE Coursework}
+\chead{Candidate 4869}
+\lhead{Thomas Bass}
+\rfoot{Page \thepage}
+
+\begin{document}
+
+%%test table
+\begin{center}
+\begin{tabular}{ | m{4em} | m{19em} | m{7em} | m{10em} | }
+  \hline
+  Test Number & Test Name & Test Data & Test Type	\\ [0.5ex] 
+  \hline\hline
+  1 & Input strings of incorrect length. If rejected, it passes & \verb|12345| & Error \\
+  \hline 
+  2 & Input strings of incorrect length. If rejected, it passes & \verb|1234567890| & Error \\
+  \hline 
+  3 & Input strings of letters. If rejected, it passes. & \verb|abcdefg| & Error \\
+  \hline 
+  4 & Run a valid input. Print out totals at each stage, and manually check. If the calculations are correct, it passes. & \verb|13245627| & normal \\
+  \hline 
+  5 & Run the program with a GTIN number taken from a product. If it correctly calculated and verified, it passes. & \verb|01412871| & Error \\
+  \hline
+\end{tabular}
+\end{center}
+
+\end{document}
