@@ -1,8 +1,14 @@
 #OCR GCSE COMPUTING
 ##A453 Programming Project
 
-[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
 [![Documentation](https://img.shields.io/badge/documentation-Draft%202-brightgreen.svg)]()
+[![Version](https://img.shields.io/badge/version-2.1-brightgreen.svg)]()
+[![Version](https://img.shields.io/badge/wordcount-1730-brightgreen.svg)](http://app.uio.no/ifi/texcount/online.php)
+[![Sharepoint](https://img.shields.io/badge/sharepoint-ComputingCoursework-8158f9.svg?style=social)](https://tasks.office.com/rgshw.onmicrosoft.com/en-GB/Home/PlanViews/3Kba8GTx70Cn-PL5xPL38ZYAAMD1))
+
+
+
+
 
 NOT FOR PUBLIC USE
 
