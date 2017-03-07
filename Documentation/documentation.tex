@@ -89,30 +89,34 @@
 \end{center}
 
 \subsection{Task 2}
-\begin{enumerate}
-\item{Input strings of incorrect length. If rejected, it passes.}
-\item[~]{Test data: \verb|12345|.}
-\item[~]{Test data: \verb|1234567890|.}
-\item{Input strings of letters. If rejected, it passes.}
-\item[~]{Test data: \verb|abcdefg|.}
-\item{Input a valid string to search. If product found, it passes.}
-\item[~]{Test data: \verb|11440529|.}
-\item{Manually check that the program has displayed the correct stock level and information. If it does, it passes.}
-\item[~]{Stock info: 50 in stock for \#\verb|11440529| (red paint 100ml).}
-\item{Order a quantity of the product. If the program updates the stock levels, it passes.}
-\item[~]{Test data: order 5 x QTY of \#\verb|11440529| (red paint 100ml).}
-\item{Complete a full order. If the program displays a receipt with the correct values, it passes.}
-\item[~]{Test data: order 5 x QTY of \#\verb|11440529| (red paint 100ml) AND}
-\item[~]{6 x QTY of \#\verb|11509493| (blue paint 100ml).}
-\item[~]{Expected result: 5 x \#\verb|11509493| = \pounds9.95 AND 6x \#\verb|11509493| = \pounds11.94, total:  \pounds21.90 .}
-\item{Provide the program with invalid values (such as ordering negative values). If the program rejects these, it passes.}
-\item[~]{Test data: -3 x QTY \#\verb|11509493|.}
-\item[~]{Expected result: error and re-input.}
-\item[~]{Test data 0 x QTY \#\verb|11509493|.}
-\item[~]{Expected result: error and re-input.}
-\item[~]{Test data: 100 x QTY \#\verb|11509493|.}
-\item[~]{Expected result: not enough stock, re-input.}
-\end{enumerate}
+\begin{center}
+\begin{tabular}{ | m{4em} | m{19em} | m{12em} | m{5em} | }
+  \hline
+  Test Number & Test Name & Test Data & Test Type	\\ [0.5ex] 
+  \hline\hline
+  1 & Input strings of incorrect length. If rejected, it passes & \verb|12345| & Error \\
+  \hline
+  2 & Input strings of incorrect length. If rejected, it passes & \verb|1234567890| & Error \\
+  \hline
+  3 & Input strings of letters. If rejected, it passes. & \verb|abcdefg| & Error \\
+  \hline
+  4 & Input a valid string to search. If product found, it passes & \verb|11440529| & Normal \\
+  \hline
+  5 & Manually check that the program has displayed the correct stock level and information. If it does, it passes. & Stock info: 50 in stock for \verb|#11440529| (red paint 100ml) & Normal \\
+  \hline
+  6 & Order a quantity of the product. If the program updates the stock levels, it passes. & Order 5 x QTY of \verb|#11440529| (red paint 100ml). & Normal \\
+  \hline
+  7 & Complete a full order. If the program displays a receipt with the correct values, it passes. Expected total: \pounds21.90 . & Test data: order 5 x QTY of \verb|#11440529| (red paint 100ml) AND 6 x QTY of \verb|#11509493| (blue paint 100ml). & Normal \\
+  \hline
+  8 & Provide the program with a negative. If the program rejects this, it passes & -3 x QTY \verb|#11509493| & Extreme \\
+  \hline
+	9 & Provide the program with zero. If the program rejects this, it passes & 0 x QTY \verb|#11509493| & Error \\
+	\hline
+	10 & Provide the program with more stock that available. If the program rejects this, it passes & 100 x QTY \verb|#11509493| & Extreme \\
+	\hline
+\end{tabular}
+\end{center}
+
 
 \subsection{Task 3}
 \begin{enumerate}

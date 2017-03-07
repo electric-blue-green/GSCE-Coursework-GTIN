@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {2}Test Plan}{4}
 \contentsline {subsection}{\numberline {2.1}Task 1}{4}
 \contentsline {subsection}{\numberline {2.2}Task 2}{4}
-\contentsline {subsection}{\numberline {2.3}Task 3}{5}
+\contentsline {subsection}{\numberline {2.3}Task 3}{4}
 \contentsline {section}{\numberline {3}Pseudocode}{6}
 \contentsline {subsection}{\numberline {3.1}Task 1}{6}
 \contentsline {subsection}{\numberline {3.2}Task 2}{7}
