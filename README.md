@@ -8,6 +8,8 @@
 [![Status](https://img.shields.io/badge/status-pre--release-red.svg)]()
 [![Sharepoint](https://img.shields.io/badge/sharepoint-ComputingCoursework-8158f9.svg?style=social)](https://tasks.office.com/rgshw.onmicrosoft.com/en-GB/Home/PlanViews/3Kba8GTx70Cn-PL5xPL38ZYAAMD1)
 
+[![TeX](https://img.shields.io/badge/TeX%20Distro-Darwin%202016-lightgrey.svg)]()
+
 
 
 
