@@ -2,7 +2,8 @@
 ##A453 Programming Project
 
 [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=102)](https://github.com/ellerbrock/open-source-badge/)
-[![Bitbucket issues](https://img.shields.io/bitbucket/issues/atlassian/python-bitbucket.svg)]()
+[![forthebadge](http://forthebadge.com/images/badges/made-with-python.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/powered-by-oxygen.svg)](http://forthebadge.com)
 
 NOT FOR PUBLIC USE
 
