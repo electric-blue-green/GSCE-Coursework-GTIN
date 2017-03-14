@@ -2,8 +2,8 @@
 ##A453 Programming Project
 
 [![Documentation](https://img.shields.io/badge/documentation-draft--3-brightgreen.svg)]()
-[![Version](https://img.shields.io/badge/last--stable--version-2.1-brightgreen.svg)](https://github.com/electric-blue-green/GSCE-Coursework-Python-GTIN/releases)
-[![Version](https://img.shields.io/badge/current--version-3.0-red.svg)](https://github.com/electric-blue-green/GSCE-Coursework-Python-GTIN/releases)
+[![Version](https://img.shields.io/badge/last--stable--version-3.0-brightgreen.svg)](https://github.com/electric-blue-green/GSCE-Coursework-Python-GTIN/releases)
+[![Version](https://img.shields.io/badge/current--version-3.0-brightgreen.svg)](https://github.com/electric-blue-green/GSCE-Coursework-Python-GTIN/releases)
 [![Wordcount](https://img.shields.io/badge/wordcount-1397-brightgreen.svg)](http://app.uio.no/ifi/texcount/online.php)
 [![Status](https://img.shields.io/badge/status-pre--release-red.svg)]()
 [![Sharepoint](https://img.shields.io/badge/sharepoint-ComputingCoursework-8158f9.svg?style=social)](https://tasks.office.com/rgshw.onmicrosoft.com/en-GB/Home/PlanViews/3Kba8GTx70Cn-PL5xPL38ZYAAMD1)
@@ -40,6 +40,12 @@ THOMAS BASS
 
 
 ##Changelog
+
+###3.0
+
+* Started run-by-run
+* Converted and updated test plan
+* Verbose contents
 
 ###2.1
 
