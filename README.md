@@ -1,7 +1,7 @@
 #OCR GCSE COMPUTING
 ##A453 Programming Project
 
-[![Documentation](https://img.shields.io/badge/documentation-working--draft--3-red.svg)]()
+[![Documentation](https://img.shields.io/badge/documentation-draft--3-brightgreen.svg)]()
 [![Version](https://img.shields.io/badge/last--stable--version-2.1-brightgreen.svg)](https://github.com/electric-blue-green/GSCE-Coursework-Python-GTIN/releases)
 [![Version](https://img.shields.io/badge/current--version-3.0-red.svg)](https://github.com/electric-blue-green/GSCE-Coursework-Python-GTIN/releases)
 [![Wordcount](https://img.shields.io/badge/wordcount-1397-brightgreen.svg)](http://app.uio.no/ifi/texcount/online.php)
