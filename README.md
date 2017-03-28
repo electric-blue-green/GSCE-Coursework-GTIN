@@ -1,5 +1,5 @@
-#OCR GCSE COMPUTING
-##A453 Programming Project
+# OCR GCSE COMPUTING
+## A453 Programming Project
 
 [![Documentation](https://img.shields.io/badge/documentation-draft--3-brightgreen.svg)]()
 [![Version](https://img.shields.io/badge/last--stable--version-3.0-brightgreen.svg)](https://github.com/electric-blue-green/GSCE-Coursework-Python-GTIN/releases)
@@ -21,11 +21,11 @@ OCR A453
 
 THOMAS BASS
 
-##Info
+## Info
 
-###LaTeX packages required:
+### LaTeX packages required:
 
-####Default:
+#### Default:
 
 * Geometry
 * [english]Babel
@@ -39,25 +39,22 @@ THOMAS BASS
 * [export]adjustbox
 
 
-##Changelog
+## Changelog
 
-###3.0
+### 3.0
 
 * Started run-by-run
 * Converted and updated test plan
 * Verbose contents
 
-###2.1
+### 2.1
 
 * Sorted images into [/images]
 * Reworked file structure
 * Correctly named development images
 
-###2.0
+### 2.0
 
 * Added testing into development
 * Added run-by-run testing commentry
 * Added all function commentry
-
-
-
