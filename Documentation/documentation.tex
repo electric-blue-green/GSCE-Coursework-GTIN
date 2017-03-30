@@ -505,14 +505,38 @@ The program does not allow the user to order any stock if all stock levels are u
 \section{Evaluation}
 \subsection{Task 1}
 \subsubsection{Objective 1: Take an input and verify that it is 8 or 7 numerical digits}
-The program must take the input as either 8 or 7 digits of the GTIN number, and verify its length and that it is numerical.
+The program correctly took an input of either 7 or 8 digits, and successfully verified the input to be of the correct length, and that it was numeric. Objective 1 has been met.
 \subsubsection{Objective 2: Calculate the 8th check digit}
-\begin{enumerate}
-\item[~a]{Multiply the first 7 numbers alternately by 3,1}
-\item[~b]{Total these results}
-\item[~c]{Subtract this sum from its nearest highest multiple of 10}
-\end{enumerate}
+The program successfully calculated the 8th check digit, as shown in the testing above. This was tested in a real-life scenario. Objective 2 has been met.
 \subsubsection{Objective 3: Compare this to the given 8th number, or complete the 7-digit number}
+In all the testing, when a valid number was entered, the program correctly calculated and verified (if appropriate) the check digit. Objective 3 has been met.
+\subsection{Task 2}
+\subsubsection{Objective 1: Take an input and validate that it is 8 numerical digits}
+The program allowed the user to input the GTIN Number, and correctly verified that it was 8 digits. Objective 1 has been met.
+\subsubsection{Objective 2: Connect to a SQL database and run a query}
+The program was tested to connect to a local SQL Database, and run a query to find the specified product. Objective 2 has been met.
+\subsubsection{Objective 3: Collect and display the results}
+The program could correctly create an order form and print it in an easily readable format. Objective 3 has been met.
+\subsubsection{Objective 4: Update the database with the customer's order}
+The program could successfully re-connect to the database to update the stock levels when the order was confirmed by the user. Objective 4 has been met.
+\subsubsection{Objective 5: Print a receipt}
+The program can collate the cost of all the products, and calculate the total order cost and print a formatted receipt of the purchase. Objective 5 has been met.
+\subsubsection{Objective 6: Cope with SQL errors}
+The program should not encounter any SQL errors in normal use, but I identified a bug during testing that caused the program to enter an error loop if a void value was given. This can be easily escaped by the user, by disconnecting from the database and reconnecting. This is a fault with the SQL version, and would be very complex to fix in my code. Objective 6 has been partially met.
+\subsection{Task 3}
+\subsubsection{Objective 1: Scan a database and find stock to order}
+The program can correctly scan for reduced stock levels, and add these to a stock order form. Objective 1 has been met.
+\subsubsection{Objective 2: Create a receipt of the order}
+The program can collect these orders and format them into a readable receipt for the user. Objective 2 has been met.
+\subsubsection{Objective 3: Update the database with the updated stock level}
+When tested with manually reduced stock, the program could update the stock after the order has been confirmed. Objective 3 has been met.
+\subsubsection{Objective 4: Cope with any SQL errors}
+There were no SQL errors, as none of the inputs used in the query are user-defined, so no errors are expected.
+
+
+
+
+
 
 
 \end{document}
