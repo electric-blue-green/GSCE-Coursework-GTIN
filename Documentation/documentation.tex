@@ -12,30 +12,23 @@
 \usepackage[export]{adjustbox}
 \graphicspath{{/Users/ThomasBass/GitHub/GSCE-Coursework-Python-GTIN/Images/}}
 \DeclareGraphicsExtensions{.png}
-
 \title{Computing GCSE Coursework}
-\author{\\ \\ \\ \\ Thomas Bass\\Candidate 4869\\Centre 52423\\OCR A453 Programming Project\\\\ Word Count 1397 \\\\\ Made with \LaTeX}
+\author{\\ \\ \\ \\ Thomas Bass\\Candidate 4869\\Centre 52423\\OCR A453 Programming Project\\\\ Word Count 1715 \\\\ Made with \LaTeX}
 \date{2016-2017}
-
 \setcounter{tocdepth}{4}
-
 \pagestyle{fancy}
 \fancyhf{}
 \rhead{Computing GCSE Coursework}
 \chead{Candidate 4869}
 \lhead{Thomas Bass}
 \rfoot{Page \thepage}
-
 \begin{document}
-
 \maketitle
 \pagebreak
 \renewcommand*\contentsname{Summary}
 \tableofcontents
 \pagebreak
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Objectives}
-
 \subsection{Task 1}
 \begin{enumerate}
 \item{Take an input and verify that it is 8 or 7 numerical digits}
@@ -45,7 +38,6 @@
 \item[~c]{Subtract this sum from its nearest highest multiple of 10}
 \item{Compare this to the given 8th number, or complete the 7-digit number}
 \end{enumerate}
-
 \subsection{Task 2}
 \begin{enumerate}
 \item{Take an input and validate that it is 8 numerical digits}
@@ -55,7 +47,6 @@
 \item{Print a receipt}
 \item{Cope with SQL errors}
 \end{enumerate}
-
 \subsection{Task 3}
 \begin{enumerate}
 \item{Scan a database and find stock to order}
@@ -63,12 +54,8 @@
 \item{Update the database with the updated stock level}
 \item{Cope with any SQL errors}
 \end{enumerate}
-
 \pagebreak
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Test Plan}
-
 \subsection{Task 1}
 \begin{center}
 \begin{tabular}{ | m{4em} | m{19em} | m{7em} | m{10em} | }
@@ -88,7 +75,6 @@
   \hline
 \end{tabular}
 \end{center}
-
 \subsection{Task 2}
 \begin{center}
 \begin{tabular}{ | m{4em} | m{19em} | m{12em} | m{5em} | }
@@ -117,8 +103,6 @@
 	\hline
 \end{tabular}
 \end{center}
-
-
 \subsection{Task 3}
 \begin{center}
 \begin{tabular}{ | m{4em} | m{19em} | m{10em} | m{5em} | }
@@ -135,10 +119,7 @@
   \hline
 \end{tabular}
 \end{center}
-
 \pagebreak
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Pseudocode}
 \subsection{Task 1}
 \begin{lstlisting}
@@ -181,7 +162,6 @@ Verify Function:
 END
 \end{lstlisting}
 \pagebreak
-
 \subsection{Task 2}
 \begin{lstlisting}
 START
@@ -210,8 +190,6 @@ ELSE
 ENDIF
 END
 \end{lstlisting}
-\
-
 \subsection{Task 3}
 \begin{lstlisting}
 START
@@ -229,11 +207,7 @@ ELSE
 ENDIF
 END
 \end{lstlisting}
-
 \pagebreak
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Data Structure}
 \subsection{Task 1}
 \begin{center}
@@ -259,7 +233,6 @@ END
   \hline 
 \end{tabular}
 \end{center}
-
 \subsection{Task 2}
 \begin{center}
 \begin{tabular}{ | m{13em} | m{16em}| m{14em} | } 
@@ -286,7 +259,6 @@ END
  \hline
 \end{tabular}
 \end{center}
-
 \subsection{Task 3}
 \begin{center}
 \begin{tabular}{ | m{13em} | m{16em}| m{14em} | } 
@@ -309,9 +281,6 @@ END
   \hline
   \end{tabular}
 \end{center}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Development}
 \subsection{Task 1}
 For all my development, the code was written in Python's IDLE, an integrated development environment which comes packaged with Python installs.
@@ -360,8 +329,6 @@ Else, if \verb?checkdig? is equal to \verb?result?, it prints that \verb?gtin? i
 The \verb|park()| function is used after a verification or calculation has been made, and allows the user to carry out more verifications or calculations without restarting the program. \par
 \noindent\includegraphics[width=0.7\textwidth, left, width=\linewidth, frame]{image13.png} \par
 This program asks the user if they want to restart the program. If yet, it calls \verb|start()| function, and if no it ends the program. The \verb|sys| Python library provides the \verb|.exit()| function to terminate the program. In IDLE it simply ends it, but when compiled into command line it will close the window.
-
-
 \newpage
 \subsection{Task 2}
 \subsubsection{Objective 1: Take an input and validate that it is 8 numerical digits} ~\par ~\par
@@ -393,7 +360,6 @@ The program was then tested to give the following correct output: \par
 \subsubsection{Objective 6: Cope with SQL errors} ~\par
 \noindent\includegraphics{image30.png} \par
 If the user enters an invalid number, the \verb|sqlite3| library may get confused, and may enter an error loop. To break this loop, the user has to force the library to send another invalid request to the database.
-
 \newpage
 \subsection{Task 3}
 \subsubsection{Objective 1: Scan a database and find stock to order} ~\par ~\par
@@ -408,10 +374,7 @@ This function connects to the SQL database and updates the new stock levels. If 
 \subsubsection{Objective 4: Cope with any SQL errors} ~\par
 \noindent\includegraphics{image34.png} \par 
 There should not be any SQL errors, as the user does not input any information that is used directly in the SQL query. This also protects against SQL injection.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-
 \section{Testing}
 \subsection{Task 1}
 \paragraph{Test 1: Input strings of incorrect length. If rejected, it passes} ~\par
@@ -437,7 +400,6 @@ Checkdig = 7 \\
 \noindent\includegraphics{testing_5.png} 
 \noindent\includegraphics{testing_6.png} \par 
 This shows that my program works in a real world situation, and can easily verify or calculate real GTIN codes.
-
 \subsection{Task 2}	
 \paragraph{Test 1: Input strings of incorrect length. If rejected, it passes} ~\par ~\par
 \noindent\includegraphics{testing_7.png} 
@@ -484,9 +446,6 @@ This shows that the program can update the database with the new stock level
 \noindent\includegraphics{testing_24.png} \par
 The program does not allow the user to order any stock if all stock levels are up to date
 \newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{Final Program Code}
 \subsection{Task 1}
 \noindent\includegraphics[width=1\textwidth, left]{task1FINALCODE.png} \par 
@@ -499,8 +458,6 @@ The program does not allow the user to order any stock if all stock levels are u
 \subsection{Task 3}
 \noindent\includegraphics[width=1\textwidth, left]{task3FINALCODE1.png} \par
 \noindent\includegraphics[width=0.955\textwidth, left]{task3FINALCODE2.png} \par
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \section{Evaluation}
 \subsection{Task 1}
@@ -532,11 +489,4 @@ The program can collect these orders and format them into a readable receipt for
 When tested with manually reduced stock, the program could update the stock after the order has been confirmed. Objective 3 has been met.
 \subsubsection{Objective 4: Cope with any SQL errors}
 There were no SQL errors, as none of the inputs used in the query are user-defined, so no errors are expected.
-
-
-
-
-
-
-
 \end{document}
