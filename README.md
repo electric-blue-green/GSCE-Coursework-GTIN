@@ -52,19 +52,19 @@ THOMAS BASS
 * Complied ZIP
 * Pending VLE Submission
 
-### 3.0
+## 3.0
 
 * Started run-by-run
 * Converted and updated test plan
 * Verbose contents
 
-### 2.1
+## 2.1
 
 * Sorted images into [/images]
 * Reworked file structure
 * Correctly named development images
 
-### 2.0
+## 2.0
 
 * Added testing into development
 * Added run-by-run testing commentry
